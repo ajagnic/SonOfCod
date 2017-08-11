@@ -23,6 +23,10 @@ namespace SonOfCod.Controllers
             _db = db;
         }
 
+        public MarketingController()
+        {
+        }
+
         public IActionResult Index()
         {
             return View();

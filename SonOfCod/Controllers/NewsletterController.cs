@@ -14,6 +14,10 @@ namespace SonOfCod.Controllers
         private readonly ApplicationDbContext _db;
         private readonly UserManager<ApplicationUser> _userManager;
 
+        public NewsletterController()
+        {
+        }
+
         public NewsletterController(UserManager<ApplicationUser> userManager, ApplicationDbContext db)
         {
             _userManager = userManager;

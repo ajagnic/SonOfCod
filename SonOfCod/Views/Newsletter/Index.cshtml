@@ -4,5 +4,20 @@
 @{
     ViewData["Title"] = "NewsLetter";
     Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using System.Security.Claims
+@model SonOfCod.Models.Subscriber
 
+
+<h2>SonOfCod Newsletter</h2>
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(model => model.Email)
+    @Html.EditorFor(model => model.Email)
+    <input type="submit" value="Index" />
+}
+<a asp-controller="Marketing" asp-action="Index">Home</a>
+@if(User.Identity.IsAuthenticated)
+{
+    <a asp-controller="Newsletter" asp-action="SubList">Subscriber List</a>
 }

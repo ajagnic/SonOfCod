@@ -1,0 +1,26 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "Subscribers";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using System.Security.Claims
+@model IEnumerable<SonOfCod.Models.Subscriber>
+
+<h2>Admin(@User.Identity.Name)</h2>
+@if(Model.Any())
+{
+    <ul>
+        @foreach(var sub in Model)
+        {
+            <li>@Html.DisplayFor(model => sub.Email)</li>
+
+        }
+    </ul>
+}
+else
+{
+    <p>No Subscribers or Error occurred!</p>
+}
+<a asp-controller="Newsletter" ap-action="Index">Home</a>

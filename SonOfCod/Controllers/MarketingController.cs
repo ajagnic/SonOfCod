@@ -23,9 +23,10 @@ namespace SonOfCod.Controllers
             _db = db;
         }
 
-        public MarketingController()
+       /* public MarketingController()
         {
-        }
+
+        }*/   //TEMPORARY CONSTRUCT FOR TESTING
 
         public IActionResult Index()
         {

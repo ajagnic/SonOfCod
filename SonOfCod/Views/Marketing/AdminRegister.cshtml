@@ -9,8 +9,7 @@
 @model RegisterViewModel
 
 <h2>Register</h2>
-<hr />
-@using (Html.BeginForm("AdminRegister", "Marketing", FormMethod.Post))
+<img id="pic" src="~/images/hookborder.png" alt="Alternate Text" />@using (Html.BeginForm("AdminRegister", "Marketing", FormMethod.Post))
 {
     @Html.LabelFor(m => m.Email)
     <br />
@@ -31,3 +30,4 @@
     <br />
     <input type="submit" value="Register" class="btn btn-default"/>
 }
+<hr />

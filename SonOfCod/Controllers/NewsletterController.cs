@@ -12,17 +12,16 @@ namespace SonOfCod.Controllers
     public class NewsletterController : Controller
     {
         private readonly ApplicationDbContext _db;
-        private readonly UserManager<ApplicationUser> _userManager;
 
-        public NewsletterController()
+        public NewsletterController(ApplicationDbContext db)
         {
-        }
-
-        public NewsletterController(UserManager<ApplicationUser> userManager, ApplicationDbContext db)
-        {
-            _userManager = userManager;
             _db = db;
         }
+
+       /* public NewsletterController()
+        {
+
+        }*/ //TEMP CONSTRUCT FOR TESTING
 
         public IActionResult Index()
         {

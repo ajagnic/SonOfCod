@@ -3,10 +3,25 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
+    <link href="~/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/css/StyleSheet.css" rel="stylesheet" type="text/css"/>
     <title>@ViewBag.Title</title>
 </head>
 <body>
-    <div>
+
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" asp-controller="Marketing" asp-action="Index">Son Of Cod Seafood &#129416;</a>
+            </div>
+            <ul class="nav nav-tabs">
+                <li role="presentation" class="active"><a asp-controller="Marketing" asp-action="Index">Marketing</a></li>
+                <li role="presentation" class="active"><a asp-controller="Newsletter" asp-action="Index">NewsLetter</a></li>
+                <li role="presentation" class="active"><a asp-controller="Marketing" asp-action="AdminLogin">Admin</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
         @RenderBody()
     </div>
 </body>

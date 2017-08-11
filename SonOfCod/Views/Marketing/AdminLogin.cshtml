@@ -8,14 +8,32 @@
 @using SonOfCod.ViewModels
 @model LoginViewModel
 
-<h2>Login</h2>
-@using (Html.BeginForm())
+@if (User.Identity.IsAuthenticated)
 {
-    @Html.LabelFor(m => m.Email)
-    @Html.TextBoxFor(m => m.Email)
+    @using (Html.BeginForm("LogOff", "Marketing"))
+    {
+        <input type="submit" value="Log out" class="btn btn-default" />
 
-    @Html.LabelFor(m => m.Password)
-    @Html.TextBoxFor(m => m.Password)
-
-    <input type="submit" value="Log In" class="btn btn-default" />
+    }
+}
+else
+{
+    <h2>Login</h2>
+    <hr />
+    @using (Html.BeginForm())
+    {
+        @Html.LabelFor(m => m.Email)
+        <br />
+        @Html.TextBoxFor(m => m.Email)
+        <br />
+        <br />
+        @Html.LabelFor(m => m.Password)
+        <br />
+        @Html.TextBoxFor(m => m.Password)
+        <br />
+        <br />
+        <input type="submit" value="Log In" class="btn btn-default" />
+    }
+    <hr />
+    <a asp-controller="Marketing" asp-action="AdminRegister">Register New Admin</a>
 }

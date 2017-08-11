@@ -8,7 +8,9 @@
 @using System.Security.Claims
 @model IEnumerable<SonOfCod.Models.Subscriber>
 
-<h2>Admin(@User.Identity.Name)</h2>
+<h4>Current Admin: @User.Identity.Name</h4>
+<h2>Subscriber List</h2>
+<hr />
 @if(Model.Any())
 {
     <ul>
@@ -23,4 +25,3 @@ else
 {
     <p>No Subscribers or Error occurred!</p>
 }
-<a asp-controller="Newsletter" ap-action="Index">Home</a>

@@ -10,17 +10,14 @@
 @if (User.Identity.IsAuthenticated)
 {
     <p>Hello @User.Identity.Name!</p>
-    @using (Html.BeginForm("LogOff", "Marketing"))
-    {
-        <input type="submit" value="Log out" class="btn btn-default" />
 
-    }
 }
 else
 {
-    <a asp-controller="Marketing" asp-action="AdminLogin">AdminLogin</a>
-    <a asp-controller="Marketing" asp-action="AdminRegister">AdminRegister</a>
 }
 <h2>Marketing</h2>
-<a asp-controller="Newsletter" asp-action="Index">NewsLetter</a>
+<hr />
+<div class="well">
+    <h4>Welcome to Son Of Cod Seafood's online site! This site is currently being updated...but for now,  check out our Newsletter!</h4>
+</div>
 

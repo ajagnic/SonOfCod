@@ -59,9 +59,11 @@ namespace SonOfCod
                     template: "{controller=Marketing}/{action=Index}/{id?}");
             });
 
+            app.UseStaticFiles();
+
             app.Run(async (context) =>
             {
-                await context.Response.WriteAsync("error");
+                await context.Response.WriteAsync("Access Denied or Error, please Login.");
             });
         }
     }

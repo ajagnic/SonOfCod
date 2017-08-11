@@ -9,16 +9,25 @@
 @model RegisterViewModel
 
 <h2>Register</h2>
+<hr />
 @using (Html.BeginForm("AdminRegister", "Marketing", FormMethod.Post))
 {
     @Html.LabelFor(m => m.Email)
+    <br />
     @Html.TextBoxFor(m => m.Email)
+    <br />
+    <br />
 
     @Html.LabelFor(m => m.Password)
+    <br />
     @Html.PasswordFor(m => m.Password)
+    <br />
+    <br />
 
     @Html.LabelFor(m => m.ConfirmPassword)
+    <br />
     @Html.PasswordFor(m => m.ConfirmPassword)
-
-    <input type="submit" value="Register" />
+    <br />
+    <br />
+    <input type="submit" value="Register" class="btn btn-default"/>
 }

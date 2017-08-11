@@ -9,15 +9,19 @@
 @model SonOfCod.Models.Subscriber
 
 
-<h2>SonOfCod Newsletter</h2>
+<h2>Son Of Cod Newsletter</h2>
+<hr />
 @using (Html.BeginForm())
 {
     @Html.LabelFor(model => model.Email)
+    <p></p>
     @Html.EditorFor(model => model.Email)
-    <input type="submit" value="Index" />
+    <input type="submit" value="Submit" class="btn btn-default"/>
 }
-<a asp-controller="Marketing" asp-action="Index">Home</a>
-@if(User.Identity.IsAuthenticated)
+
+<br />
+<p>Welcome to Son Of Cod! Please subscribe to our newsletter for immediate updates and even special offers!</p>
+@if (User.Identity.IsAuthenticated)
 {
     <a asp-controller="Newsletter" asp-action="SubList">Subscriber List</a>
 }

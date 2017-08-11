@@ -1,0 +1,24 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "AdminRegister";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using SonOfCod.ViewModels
+@model RegisterViewModel
+
+<h2>Register</h2>
+@using (Html.BeginForm("AdminRegister", "Marketing", FormMethod.Post))
+{
+    @Html.LabelFor(m => m.Email)
+    @Html.TextBoxFor(m => m.Email)
+
+    @Html.LabelFor(m => m.Password)
+    @Html.PasswordFor(m => m.Password)
+
+    @Html.LabelFor(m => m.ConfirmPassword)
+    @Html.PasswordFor(m => m.ConfirmPassword)
+
+    <input type="submit" value="Register" />
+}
